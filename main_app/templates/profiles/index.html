@@ -12,7 +12,7 @@
 <div class="card profile-index" style="background-color: transparent; border-color: white;">
   <div class="content">
     <span class="card-title" style="color: white; text-transform: uppercase; text-align: center;"> Team Name:
-      {{ user.username}}</span>
+      {{ user.username }}</span>
   </div>
 
 </div>
@@ -24,7 +24,7 @@
       {% for photo in profile.photo_set.all %}
       <img src="{{ photo.url }}" alt="" class="circle" />
       {% endfor %}
-     
+      <span class='title' style="color: white;">{{profile.name}}</span>
       <p style="color: white;"><br>
         {{profile.bio}}<br>
         {{profile.location}}

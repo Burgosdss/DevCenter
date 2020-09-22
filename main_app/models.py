@@ -18,17 +18,12 @@ class Article(models.Model):
         ordering = ['-date']
 
 class Profile(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     location = models.CharField(max_length=100)
     age = models.IntegerField()
     bio = models.TextField(max_length=100)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     articles = models.ManyToManyField(Article)
-
-    # def save(self, *args, **kwargs):
-    #     if not self.id:
-    #         self.name = self.user.first_name + self.user.last_name
-    #     super(Profile, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.user.username
